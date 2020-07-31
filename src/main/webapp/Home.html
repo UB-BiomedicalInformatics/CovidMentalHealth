@@ -59,30 +59,6 @@ input[type="checkbox"] {
 			<input type="time" id="time" placeholder="hh:mm:ss.ms"/> 
 			</div>
 			<div class="pure-control-group">
-			<label for="newCallId">New Call:</label>
-			<select name="newCall" id="newCallId">
-			  <option value="Normal, not at all ill">Normal, not at all ill</option>
-			  <option value="Borderline mentally ill">Borderline mentally ill</option>
-			  <option value="Mildly ill">Mildly ill</option>
-			  <option value="Moderately ill">Moderately ill</option>
-			  <option value="Markedly ill">Markedly ill</option>
-			  <option value="Severely ill">Severely ill</option>
-			  <option value="Among the most extremely ill patients">Among the most extremely ill patients</option>
-			</select> 
-			</div>
-			<div class="pure-control-group">
-			<label for="followUpId">Follow-up:</label>
-			<select name="followUp" id="followUpId">
-			  <option value="1-Very much improved">1-Very much improved</option>
-			  <option value="2-Much improved">2-Much improved</option>
-			  <option value="3-Minimally improved">3-Minimally improved</option>
-			  <option value="4-No change">4-No change</option>
-			  <option value="5-Minimally Worse">5-Minimally Worse</option>
-			  <option value="6-Much Worse">6-Much Worse</option>
-			  <option value="7-Very much Worse">7-Very much Worse</option>
-			</select> 
-			</div>
-			<div class="pure-control-group">
 			<label for="seqNo">Sequence Number:</label>
 			<input type='text' id="seqNo"/>
 			</div>
@@ -97,10 +73,6 @@ input[type="checkbox"] {
 			<div class="pure-control-group">
 			<label for="callbackNo">Callback Number:</label>
 			<input type='text' id="callbackNo"/>
-			</div>
-			<div class="pure-control-group">
-			<label for="currentLoc">Current Location:</label>
-			<input type='text' id="currentLoc"/>
 			</div>
 			<div class="pure-control-group">
 			<label for="currentLoc">Current Location:</label>
@@ -247,9 +219,22 @@ input[type="checkbox"] {
 			  <option value="30+">30+</option>
 			</select> 
 			</div>
+			<h3><p style="text-decoration: underline;">Outcomes</p></h3>
 			<div class="pure-control-group">
-			<label for="outcomesId">Outcomes:</label>
-			<select name="outcomes" id="outcomesId">
+			<label for="newCallId">New Call:</label>
+			<select name="newCall" id="newCallId">
+			  <option value="Normal, not at all ill">Normal, not at all ill</option>
+			  <option value="Borderline mentally ill">Borderline mentally ill</option>
+			  <option value="Mildly ill">Mildly ill</option>
+			  <option value="Moderately ill">Moderately ill</option>
+			  <option value="Markedly ill">Markedly ill</option>
+			  <option value="Severely ill">Severely ill</option>
+			  <option value="Among the most extremely ill patients">Among the most extremely ill patients</option>
+			</select> 
+			</div>
+			<div class="pure-control-group">
+			<label for="followUpId">Follow-up:</label>
+			<select name="followUp" id="followUpId">
 			  <option value="1-Very much improved">1-Very much improved</option>
 			  <option value="2-Much improved">2-Much improved</option>
 			  <option value="3-Minimally improved">3-Minimally improved</option>
