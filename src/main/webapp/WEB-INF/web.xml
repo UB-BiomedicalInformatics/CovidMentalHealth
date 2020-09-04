@@ -3,7 +3,7 @@
   <display-name>CovidMentalHealth</display-name>
 	 <servlet>
     <servlet-name>Home</servlet-name>
-    <servlet-class>Home</servlet-class>
+    <servlet-class>com.Home</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Home</servlet-name>
