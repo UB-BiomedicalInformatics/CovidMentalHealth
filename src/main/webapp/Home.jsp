@@ -35,7 +35,7 @@ UserBean userBean = (UserBean)request.getAttribute("UsrBean");%>
  <script type="text/javascript">
  	var userID = generateuuid();
     </script>
-<% String userId="<script>userID</script>";
+<% String userId=request.getParameter("userID");
 session.setAttribute("userId",userId);
 List userInfoList  = DbManager.getUserInfo(userId);
 String date="";
