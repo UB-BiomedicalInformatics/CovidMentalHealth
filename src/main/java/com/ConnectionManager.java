@@ -10,8 +10,6 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.*;
 
-import org.apache.tomcat.jdbc.pool.PoolProperties;
-
 public class ConnectionManager {
 
 	private static ConnectionManager instance = null;
