@@ -8,6 +8,7 @@
 <%@ page import="java.util.Arrays"%>
 
 <jsp:useBean id="UsrBean" scope="request" class="com.UserBean" />
+<jsp:useBean id="userid" scope="session" class="java.lang.String" />
 
 <!DOCTYPE html>
 <html>
@@ -29,15 +30,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
 <title>CovidMentalHealth</title>
 <%
-UserBean userBean = (UserBean)request.getAttribute("UsrBean");%>
+UserBean userBean = (UserBean)request.getAttribute("UsrBean");
 //String userId = request.getRemoteUser();
 //out.println("UserID:"+userId);
- <script type="text/javascript">
- 	var userID = generateuuid();
-    </script>
-<% String userId=request.getParameter("userID");
-session.setAttribute("userId",userId);
-List userInfoList  = DbManager.getUserInfo(userId);
+String userId = (String)session.getAttribute("userid");
+//session.setAttribute("userId",userId);
+List userInfoList  = new ArrayList();
+if(userId!=null){
+userInfoList  = DbManager.getUserInfo(userId);
+}
 String date="";
 String time="";
 String seqNo="";
@@ -70,6 +71,7 @@ String followUpPlans="";
 String durationOfIntervention="";
 String newCall="";
 String followUp="";
+String message="";
 
 if(userInfoList!=null){
 for(int i=0;i<userInfoList.size();i++){
@@ -117,6 +119,7 @@ followUpPlans = (String)userInfoList.get(24);
 durationOfIntervention = (String)userInfoList.get(25);
 newCall = (String)userInfoList.get(26);
 followUp = (String)userInfoList.get(27);
+message = (String)userBean.getMessage();
 
 }
 }
@@ -245,10 +248,7 @@ function showfield(name){
  document.getElementById('ifOtherPsychosocialId').style.display='none';
  document.getElementById('ifOtherReferralId').style.display='none';
  }
- function generateuuid() {
-     return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
-     (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16));
- }
+
 
 </script>
 <style>
@@ -293,19 +293,20 @@ input {
 
 <div id="form">
 <form name="homeForm" id="homeformId" method="post" action="Home">	
-<% 
-String user = request.getRemoteUser();
-out.println("user:"+user);
-%>
+
 <div class="splash-container">
 		<h1 class="splash-head is-center">Mental Health in the Era of COVID 19</h1>
 	</div>
 	<div class="content-wrapper">
 		<div class="content">
-			<font size="3px"></font>
+		<%if(message!=null&&message!=""){%>
+			<div id="successmessage"><font color=red size=3px><%=message%></font></div>
+			<%}%>
 			<h2 class="content-head is-center">Case Report Form</h2>
 			<div class="row h-100 justify-content-center align-items-center">
 			<fieldset>
+			
+			<input id="user" name="username" type="hidden" value="" />
 			<div class="form-group">
 			<label for="date">Date:</label>
 			<input type="date" name="date" id="dateId" value="<%=date%>" class="form-control" style="width:400px;height: 40px;" placeholder="mm/dd/yyyy" /> 

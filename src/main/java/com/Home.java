@@ -55,6 +55,7 @@ public class Home extends HttpServlet {
 		String firstNameStr = request.getParameter("firstName");
 		String callbackNoStr = request.getParameter("callbackNo");
 		String currentLocStr = request.getParameter("currentLoc");
+		String message = "";
 		String ageStr = request.getParameter("age");
 		if(ageStr!="") {
 		int age = Integer.parseInt(ageStr);
@@ -127,9 +128,11 @@ public class Home extends HttpServlet {
 		String newCallStr = request.getParameter("newCall");
 		String followUpStr = request.getParameter("followUp");
 		HttpSession session = request.getSession();
-		String userId = (String)session.getAttribute("userId");
-		
+		//String userId = (String)session.getAttribute("userId");
+		String userId = request.getParameter("username");
+		userId = UUID.randomUUID().toString();
 		System.out.println("userId:"+userId);
+		session.setAttribute("userid", userId);
 	
 //		System.out.println("dateStr: "+dateStr);
 //		System.out.println("timeStr: "+timeStr);
@@ -190,6 +193,8 @@ public class Home extends HttpServlet {
 		
 		try {
 			DbManager.SaveUserInDB(userBean);
+			message = "Information saved. Thank you!";
+			userBean.setMessage(message);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
@@ -200,5 +205,5 @@ public class Home extends HttpServlet {
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Home.jsp");
 		dispatcher.forward(request, response);
 	}
-
+	
 }

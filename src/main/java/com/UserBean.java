@@ -37,6 +37,7 @@ public class UserBean {
 	private String durationOfIntervention;
 	private String newCall;
 	private String followUp;
+	private String message;
 
 	public String getUserId() {
 		return userId;
@@ -223,6 +224,12 @@ public class UserBean {
 	}
 	public void setFollowUp(String followUp) {
 		this.followUp = followUp;
+	}
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	}
