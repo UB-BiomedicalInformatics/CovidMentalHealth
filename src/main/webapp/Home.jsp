@@ -29,10 +29,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
 <title>CovidMentalHealth</title>
 <%
-UserBean userBean = (UserBean)request.getAttribute("UsrBean");
+UserBean userBean = (UserBean)request.getAttribute("UsrBean");%>
 //String userId = request.getRemoteUser();
 //out.println("UserID:"+userId);
-String userId="Annie";
+ <script type="text/javascript">
+ 	var userID = generateuuid();
+    </script>
+<% String userId="<script>userID</script>";
 session.setAttribute("userId",userId);
 List userInfoList  = DbManager.getUserInfo(userId);
 String date="";
@@ -241,6 +244,10 @@ function showfield(name){
  document.getElementById('ifOtherTeamId').style.display='none';
  document.getElementById('ifOtherPsychosocialId').style.display='none';
  document.getElementById('ifOtherReferralId').style.display='none';
+ }
+ function generateuuid() {
+     return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+     (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16));
  }
 
 </script>
