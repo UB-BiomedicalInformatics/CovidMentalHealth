@@ -197,6 +197,7 @@ public class Home extends HttpServlet {
 			userBean.setMessage(message);
 		} catch (SQLException e) {
 			e.printStackTrace();
+			message = "Error accessing database!";
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
