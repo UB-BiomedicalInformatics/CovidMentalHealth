@@ -42,7 +42,7 @@ if(userId!=null){
 	try {
 userInfoList  = DbManager.getUserInfo(userId);
 	}catch (NullPointerException e) {
-		errorMessage = "Error accessing database!";
+		errorMessage = "Database is currently down. We are working on it to bring it up soon.Thank you for your patience.!";
 	}
 }
 String date="";

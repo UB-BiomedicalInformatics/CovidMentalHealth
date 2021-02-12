@@ -196,7 +196,7 @@ public class Home extends HttpServlet {
 			message = "Information saved. Thank you!";
 			userBean.setMessage(message);
 		} catch (SQLException e) {
-			message = "Error accessing database!";
+			message = "Database is currently down. We are working on it to bring it up soon.Thank you for your patience.!";
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
