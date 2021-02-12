@@ -195,8 +195,11 @@ public class Home extends HttpServlet {
 			DbManager.SaveUserInDB(userBean);
 			message = "Information saved. Thank you!";
 			userBean.setMessage(message);
-		} catch (SQLException e) {
+		} catch (NullPointerException e) {
 			message = "Database is currently down. We are working on it to bring it up soon.Thank you for your patience.!";
+		} 
+		catch (SQLException e) {
+			message = "Error accessing Database!";
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
