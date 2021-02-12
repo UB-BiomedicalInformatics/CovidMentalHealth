@@ -4,6 +4,7 @@
 <%@ page import="javax.servlet.RequestDispatcher"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.List"%>
+<%@ page import="java.sql.SQLException" %>
 <%@ page import="com.DbManager"%>
 <%@ page import="java.util.Arrays"%>
 
@@ -34,10 +35,15 @@ UserBean userBean = (UserBean)request.getAttribute("UsrBean");
 //String userId = request.getRemoteUser();
 //out.println("UserID:"+userId);
 String userId = (String)session.getAttribute("userid");
+String errorMessage = "";
 //session.setAttribute("userId",userId);
 List userInfoList  = new ArrayList();
 if(userId!=null){
+	try {
 userInfoList  = DbManager.getUserInfo(userId);
+	}catch (SQLException e) {
+		errorMessage = "Error accessing database!";
+	}
 }
 String date="";
 String time="";
@@ -300,7 +306,9 @@ input {
 	<div class="content-wrapper">
 		<div class="content">
 		<% out.println("message");
-		if(message!=null&&message!=""){%>
+		if(errorMessage!=null&&errorMessage!=""){%>
+			<div id="errormessage"><font color=red size=3px><%=errorMessage%></font></div>
+			<%}else{%>
 			<div id="successmessage"><font color=red size=3px><%=message%></font></div>
 			<%}%>
 			<h2 class="content-head is-center">Case Report Form</h2>
