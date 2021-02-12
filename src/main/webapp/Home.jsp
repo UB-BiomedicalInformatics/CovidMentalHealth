@@ -305,7 +305,7 @@ input {
 	</div>
 	<div class="content-wrapper">
 		<div class="content">
-		<% out.println("message");
+		<% 
 		if(errorMessage!=null&&errorMessage!=""){%>
 			<div id="errormessage"><font color=red size=3px><%=errorMessage%></font></div>
 			<%}else{%>
