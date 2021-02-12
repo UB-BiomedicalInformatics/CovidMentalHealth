@@ -299,7 +299,8 @@ input {
 	</div>
 	<div class="content-wrapper">
 		<div class="content">
-		<%if(message!=null&&message!=""){%>
+		<% out.println("message");
+		if(message!=null&&message!=""){%>
 			<div id="successmessage"><font color=red size=3px><%=message%></font></div>
 			<%}%>
 			<h2 class="content-head is-center">Case Report Form</h2>
