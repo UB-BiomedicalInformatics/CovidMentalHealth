@@ -41,7 +41,7 @@ List userInfoList  = new ArrayList();
 if(userId!=null){
 	try {
 userInfoList  = DbManager.getUserInfo(userId);
-	}catch (SQLException e) {
+	}catch (NullPointerException e) {
 		errorMessage = "Error accessing database!";
 	}
 }
