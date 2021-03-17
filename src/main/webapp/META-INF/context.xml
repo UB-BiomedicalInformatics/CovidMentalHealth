@@ -6,7 +6,7 @@
 		maxActive="55" maxIdle="21" minIdle="13"
 		timeBetweenEvictionRunsMillis="34000" minEvictableIdleTimeMillis="55000"
 		validationQuery="SELECT 1" validationInterval="34" testOnBorrow="true"
-		removeAbandoned="true" removeAbandonedTimeout="233" username="Annie"
-		password="Biomed#3" driverClassName="net.sourceforge.jtds.jdbc.Driver"
-		url="jdbc:jtds:sqlserver://128.205.2.59:1433;domain=CUSHING;databaseName=CovidMentalHealth;" />
+		removeAbandoned="true" removeAbandonedTimeout="233" username="SA"
+		password="KingKongVs$5Godzilla" driverClassName="net.sourceforge.jtds.jdbc.Driver"
+		url="jdbc:jtds:sqlserver://localhost:1433;databaseName=CovidMentalHealth;" />
 </Context>
