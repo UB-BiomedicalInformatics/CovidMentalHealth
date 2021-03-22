@@ -35,6 +35,7 @@ UserBean userBean = (UserBean)request.getAttribute("UsrBean");
 //String userId = request.getRemoteUser();
 //out.println("UserID:"+userId);
 String userId = (String)session.getAttribute("userid");
+out.println("UserID:"+userId);
 String errorMessage = "";
 //session.setAttribute("userId",userId);
 List userInfoList  = new ArrayList();
