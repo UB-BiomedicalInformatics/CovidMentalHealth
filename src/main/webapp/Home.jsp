@@ -308,7 +308,7 @@ input {
 		<% 
 		if(errorMessage!=null&&errorMessage!=""){%>
 			<div id="errormessage"><font color=red size=3px><%=errorMessage%></font></div>
-			<%}else{%>
+			<%}else if(message!=null&&message!=""){%>
 			<div id="successmessage"><font color=red size=3px><%=message%></font></div>
 			<%}%>
 			<h2 class="content-head is-center">Case Report Form</h2>
