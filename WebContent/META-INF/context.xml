@@ -8,5 +8,5 @@
 		validationQuery="SELECT 1" validationInterval="34" testOnBorrow="true"
 		removeAbandoned="true" removeAbandonedTimeout="233" username="SA"
 		password="KingKongVs$5Godzilla" driverClassName="net.sourceforge.jtds.jdbc.Driver"
-		url="jdbc:jtds:sqlserver://localhost:1433;databaseName=CovidMentalHealth;" />
+		url="jdbc:jtds:sqlserver://localhost:1434;databaseName=CovidMentalHealth;" />
 </Context>
