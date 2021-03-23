@@ -37,9 +37,10 @@ function checkIfUserExists(){
 	alert("inside check if user exists");
 	var userIdEntered = document.getElementById('searchId').value;
 	alert("userid:"+userIdEntered);	
+	alert("typeof:"+typeof 'userIdEntered');
 	if(userIdEntered!=null){
 		alert("inside userentered no null");
-	userInfoList  = DbManager.getUserInfo(userIdEntered);
+	userInfoList  = DbManager.getUserInfo('userIdEntered');
 	alert("prob with db connection");
 	if(userInfoList!=null){
 	alert("userInfoList not null");
