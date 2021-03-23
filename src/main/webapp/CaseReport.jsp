@@ -298,7 +298,7 @@ input {
 <body onload="hidefield()">
 
 <div id="form">
-<form name="homeForm" id="homeformId" method="post" action="Home">	
+<form name="caseReportForm" id="caseReportFormId" method="post" action="Home">	
 
 <div class="splash-container">
 		<h1 class="splash-head is-center">Mental Health in the Era of COVID 19</h1>
