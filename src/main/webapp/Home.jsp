@@ -86,11 +86,11 @@ input {
 			</div>
 			<br/>
 			<div>
-			<button type="submit" class="btn btn-primary" name="searchUserId" id="searchUserId" onclick="CaseReport.jsp">Search</button>
+			<button type="submit" class="btn btn-primary" name="searchUser" id="searchUserId" onclick="CaseReport.jsp">Search</button>
 			</div>
 			<br/>
 			<div>
-			<button type="submit" class="btn btn-primary" name="createUser" id="createUser" onclick="CaseReport.jsp">Create New User</button>
+			<button type="submit" class="btn btn-primary" name="createUser" id="createUserId" onclick="CaseReport.jsp">Create New User</button>
 			</div>
 		</div>
 	</div>
