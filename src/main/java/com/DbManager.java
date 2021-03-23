@@ -174,6 +174,35 @@ public class DbManager {
 					
 				}
 			}
+			System.out.println("date:"+date);
+			System.out.println("time:"+time);
+			System.out.println("seqNo:"+seqNo);
+			System.out.println("lastName:"+lastName);
+			System.out.println("firstName:"+firstName);
+			System.out.println("callbackNum:"+callbackNum);
+			System.out.println("currentLoc:"+currentLoc);
+			System.out.println("age:"+age);
+			System.out.println("gender:"+gender);
+			System.out.println("teamRole:"+teamRole);
+			System.out.println("unit:"+unit);
+			System.out.println("race:"+race);
+			System.out.println("ethnicity:"+ethnicity);
+			System.out.println("newVsExacerbation:"+newVsExacerbation);
+			System.out.println("topConcern:"+topConcern);
+			System.out.println("otherConcerns:"+otherConcerns);
+			System.out.println("covidStatus:"+covidStatus);
+			System.out.println("pastPsychiatric:"+pastPsychiatric);
+			System.out.println("curMedication:"+curMedication);
+			System.out.println("sumIntervention:"+sumIntervention);
+			System.out.println("psychosocial:"+psychosocial);
+			System.out.println("medEducation:"+medEducation);
+			System.out.println("referral:"+referral);
+			System.out.println("education:"+education);
+			System.out.println("followUpPlans:"+followUpPlans);
+			System.out.println("durOfIntervention:"+durOfIntervention);
+			System.out.println("newCall:"+newCall);
+			System.out.println("followUp:"+followUp);
+			
 			UserInfoList.add(date);
 			UserInfoList.add(time);
 			UserInfoList.add(seqNo);
@@ -217,6 +246,10 @@ public class DbManager {
 				conn = null;
 			}
 		}
+		for(int i=0;i<UserInfoList.size();i++) {
+			System.out.println("UserInfoList:"+UserInfoList.get(i).toString());
+		}
+		
 		return UserInfoList;
 	}
 
