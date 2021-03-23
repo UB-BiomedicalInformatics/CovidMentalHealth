@@ -31,24 +31,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
 <title>CovidMentalHealth</title>
 <script type="text/javascript">
-String errorMessage = "";
+
 function checkIfUserExists(){
 	alert("inside check if user exists");
 	var userIdEntered = document.getElementById('searchId').value;
-	alert("userid:"+userIdEntered);
-	//if(userIdEntered!=null){
-		//try {
-	//userInfoList  = DbManager.getUserInfo(userIdEntered);
-	//if(userInfoList!=null){
-	//alert("userInfoList not null");
-	//}else{
-		//alert("userInfoList nullll");
-	//}
-		//alert("inside try");
-		//}catch (Exception e) {
-			//errorMessage = "Database is currently down. We are working on it to bring it up soon.Thank you for your patience.!";
-		//}
-	//}
+	alert("userid:"+userIdEntered);	
 }
 </script>
 <style>
