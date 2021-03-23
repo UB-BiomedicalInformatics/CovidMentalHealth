@@ -30,7 +30,12 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
 <title>CovidMentalHealth</title>
-
+<script type="text/javascript">
+function checkIfUserExists(){
+	alert("inside check if user exists");
+	alert("userid:"+request.getParameter("search").value);
+}
+</script>
 <style>
 input[type="checkbox"] {
   padding-left: 10px;
@@ -86,7 +91,7 @@ input {
 			</div>
 			<br/>
 			<div>
-			<button type="submit" class="btn btn-primary" name="searchUser" id="searchUserId">Search</button>
+			<button type="submit" class="btn btn-primary" name="searchUser" id="searchUserId" onclick="checkIfUserExists()">Search</button>
 			</div>
 			<br/>
 			<div>
