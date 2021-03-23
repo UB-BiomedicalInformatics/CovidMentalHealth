@@ -48,6 +48,14 @@ public class Home extends HttpServlet {
 		// TODO Auto-generated method stub
 		System.out.println("inside dopost");
 		UserBean userBean = new UserBean();
+		System.out.println("uuserid passed"+request.getParameter("searchUserId"));
+		if(request.getParameter("searchUserId")=="searchUserId") {
+			System.out.println("yes searching for user");
+			System.out.println("userid value entered:"+request.getParameter("search"));
+		}
+		if(request.getParameter("createUser")=="createUser") {
+			System.out.println("creating new user");
+		}
 		String dateStr = request.getParameter("date");
 		String timeStr = request.getParameter("time");
 		String seqNoStr = request.getParameter("seqNo");
