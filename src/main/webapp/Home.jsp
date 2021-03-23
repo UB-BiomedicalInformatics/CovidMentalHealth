@@ -38,12 +38,15 @@ function checkIfUserExists(){
 	var userIdEntered = document.getElementById('searchId').value;
 	alert("userid:"+userIdEntered);	
 	if(userIdEntered!=null){
+		alert("inside userentered no null");
 	userInfoList  = DbManager.getUserInfo(userIdEntered);
 	if(userInfoList!=null){
 	alert("userInfoList not null");
 	}else{
 		alert("userInfoList nullll");
 	}
+	}else{
+		alert("userentered nulll");
 	}
 }
 </script>
