@@ -30,7 +30,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
 <title>CovidMentalHealth</title>
-<% String errorMessage = ""; %>
+<% String errorMessage = ""; 
+List userInfoList  = new ArrayList();%>
 <script type="text/javascript">
 
 function checkIfUserExists(){
@@ -40,7 +41,7 @@ function checkIfUserExists(){
 	alert("typeof:"+typeof 'userIdEntered');
 	if(userIdEntered!=null){
 		alert("inside userentered no null");
-	userInfoList  = DbManager.getUserInfo('userIdEntered');
+	userInfoList  = DbManager.getUserInfo(userIdEntered);
 	alert("prob with db connection");
 	if(userInfoList!=null){
 	alert("userInfoList not null");
