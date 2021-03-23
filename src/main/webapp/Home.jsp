@@ -42,7 +42,7 @@ function checkIfUserExists(){
 	alert("typeof:"+typeof 'userIdEntered');
 	if(userIdEntered!=null){
 		alert("inside userentered no null");
-	userInfoList  = DbManager.getUserInfo('<%=userIdEntered%>');
+	userInfoList  = "<%=DbManager.getUserInfo(userIdEntered)%>";
 	alert("prob with db connection");
 	if(userInfoList!=null){
 	alert("userInfoList not null");
