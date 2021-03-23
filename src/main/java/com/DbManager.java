@@ -136,12 +136,13 @@ public class DbManager {
 		
 		List UserInfoList = new ArrayList();
 		try {
-
+			System.out.println("userId in dbmanager:"+userId);
 			PreparedStatement prepStmt = conn.prepareStatement(rb.getString("selectUserInfo"));
 			prepStmt.setString(1, userId);
 			ResultSet rs = prepStmt.executeQuery();
 			
 			if (rs != null) {
+				System.out.println("inside rs not null");
 				while (rs.next()) {
 					date = rs.getString("Date");
 					time = rs.getString("Time");
