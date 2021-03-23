@@ -72,7 +72,7 @@ input {
 <body>
 
 <div id="form">
-<form name="homeForm" id="homeformId" method="post" action="Home">	
+<form name="homeForm" id="homeformId" method="post" action="/CaseReport.jsp">	
 
 <div class="splash-container">
 		<h1 class="splash-head is-center">Mental Health in the Era of COVID 19</h1>
@@ -86,11 +86,11 @@ input {
 			</div>
 			<br/>
 			<div>
-			<button type="submit" class="btn btn-primary" name="searchUser" id="searchUserId" onclick="CaseReport.jsp">Search</button>
+			<button type="submit" class="btn btn-primary" name="searchUser" id="searchUserId">Search</button>
 			</div>
 			<br/>
 			<div>
-			<button type="submit" class="btn btn-primary" name="createUser" id="createUserId" onclick="CaseReport.jsp">Create New User</button>
+			<button type="submit" class="btn btn-primary" name="createUser" id="createUserId">Create New User</button>
 			</div>
 		</div>
 	</div>
