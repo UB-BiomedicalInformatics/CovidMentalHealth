@@ -45,7 +45,7 @@ function checkIfUserExists(){
 		//alert("userInfoList nullll");
 	//}
 		alert("inside try");
-		}catch (NullPointerException e) {
+		}catch (Exception e) {
 			errorMessage = "Database is currently down. We are working on it to bring it up soon.Thank you for your patience.!";
 		}
 	}
