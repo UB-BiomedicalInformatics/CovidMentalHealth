@@ -31,16 +31,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
 <title>CovidMentalHealth</title>
 <% String errorMessage = ""; 
-List userInfoList  = new ArrayList();
-String userIdEntered = null;%>
+
+%>
 <script type="text/javascript">
 function checkIfUserExists(){
 	alert("inside check if user exists");
-	<%=userIdEntered%> = document.getElementById('searchId').value;
-	alert("userid:"+<%=userIdEntered%>);	
-	if(<%=userIdEntered%>!=null){
+	var userIdEntered = document.getElementById('searchId').value;
+	alert("userid:"+userIdEntered);	
+	if(userIdEntered!=null){
 		alert("inside userentered no null");
-	userInfoList  = "<%=DbManager.getUserInfo(userIdEntered)%>";
+	var userInfoList  = "<%=DbManager.getUserInfo("userIdEntered")%>";
 	alert("prob with db connection");
 	if(userInfoList!=null){
 	alert("userInfoList not null");
