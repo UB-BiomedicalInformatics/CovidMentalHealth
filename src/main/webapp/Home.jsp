@@ -83,6 +83,7 @@ input {
 			<div class="row h-100 justify-content-center align-items-center">
 			<label for="search">Enter UserId to search:</label>
 			<input type='text' name="search" id="search" value="" style="width:400px;height: 40px;" class="form-control" required/>
+			<button type="submit" class="btn btn-primary" name="searchUserId">Search</button>
 			</div>
 			<br/>
 		</div>
