@@ -37,19 +37,19 @@ function checkIfUserExists(){
 	var userIdEntered = document.getElementById('searchId').value;
 	alert("userid:"+userIdEntered);	
 	document.getElementById("hiddenField").value=userIdEntered;
-	alert("hidden value:"+<%=request.getParameter("hiddenField")%>);
-	if(userIdEntered!=null && userIdEntered!=""){
-		alert("inside userentered no null");
-	var userInfoList  = "<%=DbManager.getUserInfo(request.getParameter("hiddenField"))%>";
-	alert("prob with db connection");
-	if(userInfoList!=null && userInfoList!=""){
-	alert("userInfoList not null");
-	}else{
-		alert("userInfoList nullll");
-	}
-	}else{
-		alert("Please enter UserId to proceed");
-	}
+	//alert("hidden value:"+<%=request.getParameter("hiddenField")%>);
+	//if(userIdEntered!=null && userIdEntered!=""){
+		//alert("inside userentered no null");
+	
+	//alert("prob with db connection");
+	//if(userInfoList!=null && userInfoList!=""){
+	//alert("userInfoList not null");
+	//}else{
+		//alert("userInfoList nullll");
+	//}
+	//}else{
+		//alert("Please enter UserId to proceed");
+	//}
 }
 `	`
 </script>

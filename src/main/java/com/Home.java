@@ -48,8 +48,8 @@ public class Home extends HttpServlet {
 		// TODO Auto-generated method stub
 		System.out.println("inside dopost");
 		UserBean userBean = new UserBean();
-		System.out.println("uuserid passed"+request.getParameter("searchUser"));
-		if(request.getParameter("searchUser")=="searchUserId") {
+		System.out.println("uuserid passed"+request.getParameter("search"));
+		if(request.getParameter("search")!=null) {
 			System.out.println("yes searching for user");
 			System.out.println("userid value entered:"+request.getParameter("search"));
 		}
