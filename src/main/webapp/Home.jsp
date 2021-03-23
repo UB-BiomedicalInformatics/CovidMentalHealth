@@ -106,7 +106,7 @@ input {
 			</div>
 			<br/>
 			<div>
-			<button type="submit" class="btn btn-primary" name="searchUser" id="searchUserId" onclick="checkIfUserExists()">Search</button>
+			<button type="submit" class="btn btn-primary" name="searchUser" id="searchUserId" onclick="checkIfUserExists();">Search</button>
 			</div>
 			<br/>
 			<div>
