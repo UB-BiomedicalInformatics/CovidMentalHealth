@@ -33,7 +33,7 @@
 <script type="text/javascript">
 function checkIfUserExists(){
 	alert("inside check if user exists");
-	alert("userid:"+request.getParameter("search").value);
+	alert("userid:"+document.getElementById('searchUserId').value);
 }
 </script>
 <style>
