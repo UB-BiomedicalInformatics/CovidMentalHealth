@@ -34,13 +34,11 @@
 List userInfoList  = new ArrayList();
 String userIdEntered = null;%>
 <script type="text/javascript">
-
 function checkIfUserExists(){
 	alert("inside check if user exists");
-	userIdEntered = document.getElementById('searchId').value;
-	alert("userid:"+userIdEntered);	
-	alert("typeof:"+typeof 'userIdEntered');
-	if(userIdEntered!=null){
+	<%=userIdEntered%> = document.getElementById('searchId').value;
+	alert("userid:"+<%=userIdEntered%>);	
+	if(<%=userIdEntered%>!=null){
 		alert("inside userentered no null");
 	userInfoList  = "<%=DbManager.getUserInfo(userIdEntered)%>";
 	alert("prob with db connection");
@@ -53,6 +51,7 @@ function checkIfUserExists(){
 		alert("userentered nulll");
 	}
 }
+
 </script>
 <style>
 input[type="checkbox"] {
