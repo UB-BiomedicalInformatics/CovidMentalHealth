@@ -31,6 +31,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
 <title>CovidMentalHealth</title>
 <script type="text/javascript">
+String errorMessage = "";
 function checkIfUserExists(){
 	alert("inside check if user exists");
 	var userIdEntered = document.getElementById('searchId').value;
