@@ -38,11 +38,11 @@ function checkIfUserExists(){
 	alert("userid:"+userIdEntered);	
 	document.getElementById("hiddenField").value=userIdEntered;
 	alert("hidden value:"+<%=request.getParameter("hiddenField")%>);
-	if(userIdEntered!=null){
+	if(userIdEntered!=null && userIdEntered!=""){
 		alert("inside userentered no null");
 	var userInfoList  = "<%=DbManager.getUserInfo(request.getParameter("hiddenField"))%>";
 	alert("prob with db connection");
-	if(userInfoList!=null){
+	if(userInfoList!=null && userInfoList!=""){
 	alert("userInfoList not null");
 	}else{
 		alert("userInfoList nullll");
@@ -51,7 +51,7 @@ function checkIfUserExists(){
 		alert("Please enter UserId to proceed");
 	}
 }
-
+`	`
 </script>
 <style>
 input[type="checkbox"] {
@@ -94,7 +94,7 @@ input {
 <body>
 
 <div id="form">
-<form name="homeForm" id="homeformId" method="post" action="/CovidMentalHealth/CaseReport.jsp">	
+<form name="homeForm" id="homeformId" method="post" action="Home">	
 
 <div class="splash-container">
 		<h1 class="splash-head is-center">Mental Health in the Era of COVID 19</h1>
