@@ -48,7 +48,7 @@ function checkIfUserExists(){
 		alert("userInfoList nullll");
 	}
 	}else{
-		alert("userentered nulll");
+		alert("Please enter UserId to proceed");
 	}
 }
 
