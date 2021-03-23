@@ -33,7 +33,7 @@
 <script type="text/javascript">
 function checkIfUserExists(){
 	alert("inside check if user exists");
-	var userIdEntered = document.getElementById('searchUserId').value;
+	var userIdEntered = document.getElementById('searchId').value;
 	alert("userid:"+userIdEntered);
 }
 </script>
@@ -88,7 +88,7 @@ input {
 			<h2 class="content-head is-center">Case Report Form</h2>
 			<div class="row h-100 justify-content-center align-items-center">
 			<label for="search">Enter UserId to search:</label>
-			<input type='text' name="search" id="search" style="width:400px;height: 40px;" class="form-control" required/>
+			<input type='text' name="search" id="searchId" style="width:400px;height: 40px;" class="form-control"/>
 			</div>
 			<br/>
 			<div>
