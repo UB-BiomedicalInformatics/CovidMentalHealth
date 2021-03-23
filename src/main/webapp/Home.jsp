@@ -314,7 +314,7 @@ input {
 			<h2 class="content-head is-center">Case Report Form</h2>
 			<div class="form-group">
 			<label for="search">Enter UserId to search:</label>
-			<input type='text' name="search" id="search" value="" style="width:400px;height: 40px;" class="form-control" required/>
+			<input type='text' name="search" id="search" value="" style="width:400px;height: 40px;align:center;" class="form-control" required/>
 			</div>
 			<div class="row h-100 justify-content-center align-items-center">
 			<fieldset>
