@@ -101,6 +101,7 @@ public class DbManager {
 	}
 	
 	public static List getUserInfo(String userId) throws SQLException {
+		System.out.println("inside dbmanager getuserinfo");
 		ResourceBundle rb = ResourceBundle.getBundle("sql");
 		Connection conn = ConnectionManager.getInstance().getConnection();
 		String date = "";
