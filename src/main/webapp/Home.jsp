@@ -316,6 +316,7 @@ input {
 			<label for="search">Enter UserId to search:</label>
 			<input type='text' name="search" id="search" value="" style="width:400px;height: 40px;" class="form-control" required/>
 			</div>
+			<br/>
 			<div class="row h-100 justify-content-center align-items-center">
 			<fieldset>
 			
