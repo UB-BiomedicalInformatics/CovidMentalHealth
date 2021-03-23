@@ -37,12 +37,13 @@ function checkIfUserExists(){
 	alert("userid:"+userIdEntered);
 	if(userIdEntered!=null){
 		try {
-	userInfoList  = DbManager.getUserInfo(userIdEntered);
-	if(userInfoList!=null){
-	alert("userInfoList not null");
-	}else{
-		alert("userInfoList nullll");
-	}
+	//userInfoList  = DbManager.getUserInfo(userIdEntered);
+	//if(userInfoList!=null){
+	//alert("userInfoList not null");
+	//}else{
+		//alert("userInfoList nullll");
+	//}
+		alert("inside try");
 		}catch (NullPointerException e) {
 			errorMessage = "Database is currently down. We are working on it to bring it up soon.Thank you for your patience.!";
 		}
