@@ -72,7 +72,7 @@ input {
 <body>
 
 <div id="form">
-<form name="homeForm" id="homeformId" method="post" action="/CaseReport.jsp">	
+<form name="homeForm" id="homeformId" method="post" action="/CovidMentalHealth/CaseReport.jsp">	
 
 <div class="splash-container">
 		<h1 class="splash-head is-center">Mental Health in the Era of COVID 19</h1>
