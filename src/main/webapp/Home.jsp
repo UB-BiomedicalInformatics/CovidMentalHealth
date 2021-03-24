@@ -119,8 +119,7 @@ input {
 			</div>
 		</div>
 	</div>
-			<%session.removeAttribute("UsrBean");
-			session.removeAttribute("editUser");%>
+
 	</form>
 	</div>
 </body>
