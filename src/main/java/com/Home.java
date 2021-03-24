@@ -110,7 +110,7 @@ public class Home extends HttpServlet {
 //					if(otherPsychosocialStr!=null&&!otherPsychosocialStr.isEmpty()) {
 //						userBean.setOtherPsychosocial(otherPsychosocialStr);
 //					}
-//					String medicationStr = (request.getParameter("medication")).trim();
+					String medicationStr = (String)userInfoList.get(21);
 //					String[] referralStr = request.getParameterValues("referral");
 //					if(referralStr!=null) {
 //						List<String> referralList = new ArrayList<String>(referralStr.length);
@@ -133,17 +133,17 @@ public class Home extends HttpServlet {
 //					if(otherReferralStr!=null&&!otherReferralStr.isEmpty()) {
 //						userBean.setOtherReferralStr(otherReferralStr);
 //					}
-//					String educationStr = (request.getParameter("education")).trim();
-//					String followUpPlansStr = (request.getParameter("followUpPlans")).trim();
-//					String durationOfInterventionStr = request.getParameter("durationOfIntervention");
-//					String newCallStr = request.getParameter("newCall");
-//					String followUpStr = request.getParameter("followUp");
-//					HttpSession session = request.getSession();
+					String educationStr = (String)userInfoList.get(23);
+					String followUpPlansStr = (String)userInfoList.get(24);
+					String durationOfInterventionStr = (String)userInfoList.get(25);
+					String newCallStr = (String)userInfoList.get(26);
+					String followUpStr = (String)userInfoList.get(27);
+					HttpSession session = request.getSession();
 //					//String userId = (String)session.getAttribute("userId");
 //					//String userId = request.getParameter("username");
 ////					String userId = UUID.randomUUID().toString();
 ////					System.out.println("userId:"+userId);
-//					session.setAttribute("userid", userId);
+					session.setAttribute("userid", userId);
 //				
 						System.out.println("dateStr: "+dateStr);
 					System.out.println("timeStr: "+timeStr);
@@ -164,13 +164,13 @@ public class Home extends HttpServlet {
 					System.out.println("currentMedsStr: "+currentMedsStr);
 					System.out.println("summarizeInterventionStr: "+summarizeInterventionStr);
 ////					System.out.println("psychosocialStr: "+psychosocialStr);
-////					System.out.println("medicationStr: "+medicationStr);
+					System.out.println("medicationStr: "+medicationStr);
 ////					System.out.println("referralStr: "+referralStr);
-////					System.out.println("educationStr: "+educationStr);
-////					System.out.println("followUpPlansStr: "+followUpPlansStr);
-////					System.out.println("durationOfInterventionStr: "+durationOfInterventionStr);
-////					System.out.println("newCallStr: "+newCallStr);
-////					System.out.println("followUpStr: "+followUpStr);
+					System.out.println("educationStr: "+educationStr);
+					System.out.println("followUpPlansStr: "+followUpPlansStr);
+					System.out.println("durationOfInterventionStr: "+durationOfInterventionStr);
+					System.out.println("newCallStr: "+newCallStr);
+					System.out.println("followUpStr: "+followUpStr);
 ////					System.out.println("otherPsychosocialStr: "+otherPsychosocialStr);
 ////					System.out.println("otherReferralStr: "+otherReferralStr);
 //					
@@ -196,13 +196,13 @@ public class Home extends HttpServlet {
 					userBean.setPastDiagnoses(pastDiagnosesStr);
 					userBean.setCurrentMeds(currentMedsStr);
 					userBean.setSummarizeIntervention(summarizeInterventionStr);
-//					userBean.setMedication(medicationStr);
-//					userBean.setEducation(educationStr);
-//					userBean.setFollowUpPlans(followUpPlansStr);
-//					userBean.setDurationOfIntervention(durationOfInterventionStr);
-//					userBean.setNewCall(newCallStr);
-//					userBean.setFollowUp(followUpStr);
-//					request.setAttribute("UsrBean", userBean);
+					userBean.setMedication(medicationStr);
+					userBean.setEducation(educationStr);
+					userBean.setFollowUpPlans(followUpPlansStr);
+					userBean.setDurationOfIntervention(durationOfInterventionStr);
+					userBean.setNewCall(newCallStr);
+					userBean.setFollowUp(followUpStr);
+					request.setAttribute("UsrBean", userBean);
 				}
 //				String dateStr = request.getParameter("date");
 //				String timeStr = request.getParameter("time");
@@ -360,7 +360,7 @@ public class Home extends HttpServlet {
 //					// TODO Auto-generated catch block
 //					e.printStackTrace();
 //				}
-//				
+				System.out.println("before request dispatch");
 				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CaseReport.jsp");
 				dispatcher.forward(request, response);
 
