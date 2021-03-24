@@ -8,6 +8,8 @@
 <%@ page import="com.DbManager"%>
 <%@ page import="java.util.Arrays"%>
 
+<jsp:useBean id="UsrBean" scope="request" class="com.UserBean" />
+<jsp:useBean id="editUser" scope="session" class="java.lang.String" />
 
 <!DOCTYPE html>
 <html>
@@ -37,7 +39,7 @@ function checkIfUserExists(){
 	var userIdEntered = document.getElementById('searchId').value;
 	alert("userid:"+userIdEntered);	
 	document.getElementById("hiddenField").value=userIdEntered;
-	//alert("hidden value:"+<%=request.getParameter("hiddenField")%>);
+
 	//if(userIdEntered!=null && userIdEntered!=""){
 		//alert("inside userentered no null");
 	

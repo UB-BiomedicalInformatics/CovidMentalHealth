@@ -50,19 +50,21 @@ public class Home extends HttpServlet {
 		UserBean userBean = new UserBean();
 		List userInfoList  = new ArrayList();
 		String message = "";
+		HttpSession session = request.getSession();
 		System.out.println("uuserid passed: "+request.getParameter("search"));
 		System.out.println("New User: "+request.getParameter("createUser"));
 		System.out.println("Save User: "+request.getParameter("saveForm"));
+		System.out.println("get newuser from session :"+session.getAttribute("newUser"));
 		String userId = request.getParameter("search");
 		String newUser = request.getParameter("createUser");
 		String saveUserInfo = request.getParameter("saveForm");
-		if((userId==null || userId=="") && (newUser.equalsIgnoreCase("createUser"))) {
+		if((session.getAttribute("newUser")=="newUser") && (newUser.equalsIgnoreCase("createUser"))) {
 			System.out.println("inside create new user");
 			System.out.println("before session");
-			HttpSession session = request.getSession();
 			String newUserId = UUID.randomUUID().toString();
 			System.out.println("newUserId:"+newUserId);
 			session.setAttribute("userid", newUserId);
+			session.setAttribute("newUser", "newUser");
 			System.out.println("after setting session variable");
 			System.out.println("before set usrbean userid");
 			userBean.setUserId(newUserId);
@@ -73,6 +75,7 @@ public class Home extends HttpServlet {
 			dispatcher.forward(request, response);
 		}else if(userId!=null && saveUserInfo.equalsIgnoreCase("saveForm")) {
 			System.out.println("inside save form");
+			session.setAttribute("saveUser", "saveUser");
 			String dateStr = request.getParameter("date");
 			String timeStr = request.getParameter("time");
 			String seqNoStr = request.getParameter("seqNo");
@@ -152,7 +155,7 @@ public class Home extends HttpServlet {
 			String durationOfInterventionStr = request.getParameter("durationOfIntervention");
 			String newCallStr = request.getParameter("newCall");
 			String followUpStr = request.getParameter("followUp");
-			HttpSession session = request.getSession();
+//			HttpSession session = request.getSession();
 			String userid = (String)session.getAttribute("userid");
 			session.setAttribute("userid", userid);
 //			System.out.println("after setting session variable");
@@ -231,7 +234,8 @@ public class Home extends HttpServlet {
 			dispatcher.forward(request, response);
 		}
 		else if(userId!=null) {
-			System.out.println("inside search for a user");			
+			System.out.println("inside search for a user");		
+			session.setAttribute("editUser", "editUser");
 				try {
 			userInfoList  = DbManager.getUserInfo(userId);
 			if(userInfoList!=null && !userInfoList.isEmpty()) {//user matched
@@ -316,7 +320,7 @@ public class Home extends HttpServlet {
 					String durationOfInterventionStr = (String)userInfoList.get(25);
 					String newCallStr = (String)userInfoList.get(26);
 					String followUpStr = (String)userInfoList.get(27);
-					HttpSession session = request.getSession();
+//					HttpSession session = request.getSession();
 //					//String userId = (String)session.getAttribute("userId");
 //					//String userId = request.getParameter("username");
 ////					String userId = UUID.randomUUID().toString();

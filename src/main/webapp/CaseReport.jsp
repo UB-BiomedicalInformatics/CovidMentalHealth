@@ -10,6 +10,8 @@
 
 <jsp:useBean id="UsrBean" scope="request" class="com.UserBean" />
 <jsp:useBean id="userid" scope="session" class="java.lang.String" />
+<jsp:useBean id="newUser" scope="session" class="java.lang.String" />
+<jsp:useBean id="saveUser" scope="session" class="java.lang.String" />
 
 <!DOCTYPE html>
 <html>
