@@ -388,7 +388,8 @@ public class Home extends HttpServlet {
 					userBean.setFollowUp(followUpStr);
 					request.setAttribute("UsrBean", userBean);
 				}
-//				
+				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CaseReport.jsp");
+				dispatcher.forward(request, response);
 			}else {
 				message = "Please enter correct UserId";
 				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Home.jsp");
