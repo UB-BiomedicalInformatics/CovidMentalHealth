@@ -722,7 +722,7 @@ input {
 			</select> 
 			<%}%>
 			</div>
-			<button type="submit" class="btn btn-primary">Submit</button>
+			<button type="submit" name="saveForm" value="saveForm" class="btn btn-primary">Submit</button>
 			</fieldset>
 			</div>
 		</div>
