@@ -51,6 +51,7 @@ public class Home extends HttpServlet {
 		List userInfoList  = new ArrayList();
 		String message = "";
 		System.out.println("uuserid passed"+request.getParameter("search"));
+		System.out.println("New User"+request.getParameter("createUser"));
 		String userId = request.getParameter("search");
 		if(userId!=null) {
 			System.out.println("yes searching for user");			
