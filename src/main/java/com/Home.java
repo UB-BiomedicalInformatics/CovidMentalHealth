@@ -53,7 +53,7 @@ public class Home extends HttpServlet {
 		System.out.println("uuserid passed: "+request.getParameter("search"));
 		System.out.println("New User: "+request.getParameter("createUser"));
 		String userId = request.getParameter("search");
-		String newUser = request.getParameter("createUser");
+		String newUser = request.getParameter("createUser").trim();
 		if(newUser=="createUser") {
 			System.out.println("inside create new user");
 //			String dateStr = request.getParameter("date");
