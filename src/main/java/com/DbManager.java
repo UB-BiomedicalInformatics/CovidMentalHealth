@@ -247,9 +247,9 @@ public class DbManager {
 				conn = null;
 			}
 		}
-		for(int i=0;i<UserInfoList.size();i++) {
-			System.out.println("UserInfoList:"+UserInfoList.get(i).toString());
-		}
+//		for(int i=0;i<UserInfoList.size();i++) {
+//			System.out.println("UserInfoList:"+UserInfoList.get(i).toString());
+//		}
 		
 		return UserInfoList;
 	}

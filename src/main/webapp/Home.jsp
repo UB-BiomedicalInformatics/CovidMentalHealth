@@ -113,7 +113,7 @@ input {
 			</div>
 			<br/>
 			<div>
-			<button type="submit" class="btn btn-primary" name="createUser" id="createUserId">Create New User</button>
+			<button type="submit" class="btn btn-primary" name="createUser" id="createUserId" value="createUser">Create New User</button>
 			</div>
 		</div>
 	</div>
