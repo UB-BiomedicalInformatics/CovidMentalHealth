@@ -18,7 +18,7 @@ public class DbManager {
 
 	public static void SaveUserInDB(UserBean userBean)
 			throws ClassNotFoundException, SQLException {
-
+		System.out.println("inside SaveUserInDB");
 		Connection conn = ConnectionManager.getInstance().getConnection();
 		ResourceBundle rbi = ResourceBundle.getBundle("sql");
 		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
