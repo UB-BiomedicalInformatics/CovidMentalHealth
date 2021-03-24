@@ -731,11 +731,7 @@ input {
 			</div>
 		</div>
 	</div>
-		<%session.removeAttribute("userid");
-			session.removeAttribute("newUser");
-			session.removeAttribute("saveUser");
-			session.removeAttribute("UsrBean");
-			%>
+
 	</form>
 	</div>
 </body>
