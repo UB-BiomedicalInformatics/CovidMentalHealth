@@ -240,6 +240,7 @@ public class Home extends HttpServlet {
 				try {
 			userInfoList  = DbManager.getUserInfo(userId);
 			if(userInfoList!=null && !userInfoList.isEmpty()) {//user matched
+				System.out.println("inside user matched");	
 				for(int i=0;i<userInfoList.size();i++) {
 					String dateStr = (String)userInfoList.get(0);					
 					String timeStr = (String)userInfoList.get(1);	
@@ -328,12 +329,12 @@ public class Home extends HttpServlet {
 ////					System.out.println("userId:"+userId);
 					session.setAttribute("userid", userId);
 //				
-//						System.out.println("dateStr: "+dateStr);
-//					System.out.println("timeStr: "+timeStr);
-//					System.out.println("lastNameStr: "+lastNameStr);
-//					System.out.println("firstNameStr: "+firstNameStr);
-//					System.out.println("currentLocStr: "+currentLocStr);
-//					System.out.println("age: "+age);
+						System.out.println("dateStr: "+dateStr);
+					System.out.println("timeStr: "+timeStr);
+					System.out.println("lastNameStr: "+lastNameStr);
+					System.out.println("firstNameStr: "+firstNameStr);
+					System.out.println("currentLocStr: "+currentLocStr);
+					System.out.println("age: "+age);
 //					System.out.println("genderStr: "+genderStr);
 //					System.out.println("teamRoleStr: "+teamRoleStr);
 //					System.out.println("unitStr: "+unitStr);
@@ -358,7 +359,7 @@ public class Home extends HttpServlet {
 ////					System.out.println("otherReferralStr: "+otherReferralStr);
 //					
 //					
-//					userBean.setUserId(userId);
+					userBean.setUserId(userId);
 					userBean.setDate(dateStr);	
 					userBean.setTime(timeStr);
 					userBean.setSeqNo(seqNoStr);
