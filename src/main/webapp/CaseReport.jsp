@@ -33,6 +33,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
 <title>CovidMentalHealth</title>
 <%
+out.println("inside case report jsp");
 UserBean userBean = (UserBean)request.getAttribute("UsrBean");
 //String userId = request.getRemoteUser();
 
