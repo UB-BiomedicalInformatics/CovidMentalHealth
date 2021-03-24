@@ -55,7 +55,7 @@ public class Home extends HttpServlet {
 		String userId = request.getParameter("search");
 		String newUser = request.getParameter("createUser");
 		if(newUser=="createUser") {
-			
+			System.out.println("inside create new user");
 //			String dateStr = request.getParameter("date");
 //			String timeStr = request.getParameter("time");
 //			String seqNoStr = request.getParameter("seqNo");
@@ -135,13 +135,14 @@ public class Home extends HttpServlet {
 //			String durationOfInterventionStr = request.getParameter("durationOfIntervention");
 //			String newCallStr = request.getParameter("newCall");
 //			String followUpStr = request.getParameter("followUp");
+			System.out.println("before session");
 			HttpSession session = request.getSession();
 			//String userId = (String)session.getAttribute("userId");
 			//String userId = request.getParameter("username");
 			String newUserId = UUID.randomUUID().toString();
-//			System.out.println("userId:"+userId);
+			System.out.println("newUserId:"+newUserId);
 			session.setAttribute("userid", newUserId);
-		
+			System.out.println("after setting session variable");
 //			System.out.println("dateStr: "+dateStr);
 //			System.out.println("timeStr: "+timeStr);
 //			System.out.println("lastNameStr: "+lastNameStr);
@@ -170,8 +171,9 @@ public class Home extends HttpServlet {
 ////			System.out.println("otherPsychosocialStr: "+otherPsychosocialStr);
 ////			System.out.println("otherReferralStr: "+otherReferralStr);
 //			
-//			
+			System.out.println("before set usrbean userid");
 			userBean.setUserId(newUserId);
+			System.out.println("after set usrbean userid");
 //			userBean.setDate(dateStr);	
 //			userBean.setTime(timeStr);
 //			userBean.setSeqNo(seqNoStr);
@@ -211,7 +213,7 @@ public class Home extends HttpServlet {
 //				// TODO Auto-generated catch block
 //				e.printStackTrace();
 //			}
-//			System.out.println("before request dispatch");
+			System.out.println("before create new user request dispatch");
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CaseReport.jsp");
 			dispatcher.forward(request, response);
 		}
