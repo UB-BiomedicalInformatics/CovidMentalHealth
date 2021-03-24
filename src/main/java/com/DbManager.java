@@ -140,6 +140,11 @@ public class DbManager {
 			PreparedStatement prepStmt = conn.prepareStatement(rb.getString("selectUserInfo"));
 			prepStmt.setString(1, userId);
 			ResultSet rs = prepStmt.executeQuery();
+			if (rs.next() == false) {
+				System.out.println("inside rs nullllllll--------");
+			}else {
+				System.out.println("inside rs not null--------");	
+			}
 			
 			if (rs != null) {
 				System.out.println("inside rs not null");
