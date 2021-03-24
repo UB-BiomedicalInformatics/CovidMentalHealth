@@ -58,7 +58,7 @@ public class Home extends HttpServlet {
 		String userId = request.getParameter("search");
 		String newUser = request.getParameter("createUser");
 		String saveUserInfo = request.getParameter("saveForm");
-		if((session.getAttribute("newUser")=="newUser") && (newUser.equalsIgnoreCase("createUser"))) {
+		if((session.getAttribute("newUser")==null) && (newUser.equalsIgnoreCase("createUser"))) {
 			System.out.println("inside create new user");
 			System.out.println("before session");
 			String newUserId = UUID.randomUUID().toString();
