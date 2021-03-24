@@ -52,10 +52,11 @@ public class Home extends HttpServlet {
 		String message = "";
 		System.out.println("uuserid passed: "+request.getParameter("search"));
 		System.out.println("New User: "+request.getParameter("createUser"));
+		System.out.println("Save User: "+request.getParameter("saveForm"));
 		String userId = request.getParameter("search");
 		String newUser = request.getParameter("createUser");
 		String saveUserInfo = request.getParameter("saveForm");
-		if(newUser.equalsIgnoreCase("createUser")) {
+		if((userId==null || userId=="") && (newUser.equalsIgnoreCase("createUser"))) {
 			System.out.println("inside create new user");
 			System.out.println("before session");
 			HttpSession session = request.getSession();
@@ -70,7 +71,7 @@ public class Home extends HttpServlet {
 			System.out.println("before create new user request dispatch");
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CaseReport.jsp");
 			dispatcher.forward(request, response);
-		}else if(saveUserInfo.equalsIgnoreCase("saveForm")) {
+		}else if(userId!=null && saveUserInfo.equalsIgnoreCase("saveForm")) {
 			System.out.println("inside save form");
 			String dateStr = request.getParameter("date");
 			String timeStr = request.getParameter("time");
