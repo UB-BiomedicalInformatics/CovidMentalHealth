@@ -30,11 +30,16 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
 <title>CovidMentalHealth</title>
-<% String errorMessage = ""; 
+<% 
+out.println("inside home page in jsp");
+	String errorMessage = ""; 
    String message = "";
    UserBean userBean = (UserBean)request.getAttribute("UsrBean");
+   out.println("userbean in jsp: "+userBean);
    if(userBean!=null){
+	   out.println("inside userben not null in jsp");
    message = (String)userBean.getMessage();
+   out.println("message in jsp: "+message);
    }
 %>
 <script type="text/javascript">
