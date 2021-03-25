@@ -132,7 +132,6 @@ public class DbManager {
 		String durOfIntervention = "";
 		String newCall = "";
 		String followUp = "";
-
 		
 		List UserInfoList = new ArrayList();
 		try {
@@ -140,14 +139,12 @@ public class DbManager {
 			PreparedStatement prepStmt = conn.prepareStatement(rb.getString("selectUserInfo"));
 			prepStmt.setString(1, userId);
 			ResultSet rs = prepStmt.executeQuery();
-			if (rs.next() == false) {
-				System.out.println("inside rs nullllllll--------");
-			}else {
-				System.out.println("inside rs not null--------");	
-			}
 			
 			if (rs != null) {
 				System.out.println("inside rs not null");
+				if (rs.next() == false) {
+					System.out.println("inside rs nullllllll--------");
+				}else {
 				while (rs.next()) {
 					date = rs.getString("Date");
 					time = rs.getString("Time");
@@ -177,9 +174,7 @@ public class DbManager {
 					durOfIntervention = rs.getString("DurOfIntervention");
 					newCall = rs.getString("NewCall");
 					followUp = rs.getString("FollowUp");
-					
 				}
-			}
 //			System.out.println("date:"+date);
 //			System.out.println("time:"+time);
 //			System.out.println("seqNo:"+seqNo);
@@ -240,6 +235,8 @@ public class DbManager {
 			
 			rs.close();
 			prepStmt.close();
+			}
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
