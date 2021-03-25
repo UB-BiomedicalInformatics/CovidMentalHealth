@@ -31,7 +31,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
 <title>CovidMentalHealth</title>
 <% String errorMessage = ""; 
-
+   String message = "";
+   UserBean userBean = (UserBean)request.getAttribute("UsrBean");
+   if(userBean!=null){
+   message = (String)userBean.getMessage();
+   }
 %>
 <script type="text/javascript">
 function checkIfUserExists(){
@@ -103,6 +107,9 @@ input {
 	</div>
 	<div class="content-wrapper">
 		<div class="content">	
+			<%if(message!=null&&message!=""){%>
+			<div id="errormessage"><font color=red size=3px><%=message%></font></div>
+			<%}%>
 			<h2 class="content-head is-center">Case Report Form</h2>
 			<div class="row h-100 justify-content-center align-items-center">
 			<label for="search">Enter UserId to search:</label>
