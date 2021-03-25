@@ -393,6 +393,7 @@ public class Home extends HttpServlet {
 				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CaseReport.jsp");
 				dispatcher.forward(request, response);
 			}else {
+				System.out.println("insid else of search");
 				message = "Please enter correct UserId";
 				userBean.setMessage(message);
 				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Home.jsp");
