@@ -216,19 +216,23 @@ public class Home extends HttpServlet {
 			userBean.setDurationOfIntervention(durationOfInterventionStr);
 			userBean.setNewCall(newCallStr);
 			userBean.setFollowUp(followUpStr);
-			request.setAttribute("UsrBean", userBean);
+//			request.setAttribute("UsrBean", userBean);
 			try {
 				DbManager.SaveUserInDB(userBean);
 				message = "Information saved. Thank you!";
 				userBean.setMessage(message);
+				request.setAttribute("UsrBean", userBean);
 			} catch (NullPointerException e) {
 				message = "Database is currently down. We are working on it to bring it up soon.Thank you for your patience.!";
 				userBean.setMessage(message);
+				request.setAttribute("UsrBean", userBean);
 			} 
 			catch (SQLException e) {
 				message = "Error accessing Database!";
 				userBean.setMessage(message);
+				request.setAttribute("UsrBean", userBean);
 			} catch (ClassNotFoundException e) {
+				request.setAttribute("UsrBean", userBean);
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
@@ -388,7 +392,7 @@ public class Home extends HttpServlet {
 					userBean.setDurationOfIntervention(durationOfInterventionStr);
 					userBean.setNewCall(newCallStr);
 					userBean.setFollowUp(followUpStr);
-					request.setAttribute("UsrBean", userBean);
+//					request.setAttribute("UsrBean", userBean);
 				}
 				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CaseReport.jsp");
 				dispatcher.forward(request, response);
@@ -396,15 +400,18 @@ public class Home extends HttpServlet {
 				System.out.println("insid else of search");
 				message = "Please enter correct UserId";
 				userBean.setMessage(message);
+				request.setAttribute("UsrBean", userBean);
 				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Home.jsp");
 				dispatcher.forward(request, response);
 			}
 				}catch (NullPointerException e) {
 					message = "Database is currently down. We are working on it to bring it up soon.Thank you for your patience.!";
 					userBean.setMessage(message);
+					request.setAttribute("UsrBean", userBean);
 				}
 			//System.out.println("userid value entered:"+request.getParameter("search"));
 					catch (SQLException e1) {
+					request.setAttribute("UsrBean", userBean);
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
