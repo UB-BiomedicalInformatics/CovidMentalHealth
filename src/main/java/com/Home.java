@@ -223,9 +223,11 @@ public class Home extends HttpServlet {
 				userBean.setMessage(message);
 			} catch (NullPointerException e) {
 				message = "Database is currently down. We are working on it to bring it up soon.Thank you for your patience.!";
+				userBean.setMessage(message);
 			} 
 			catch (SQLException e) {
 				message = "Error accessing Database!";
+				userBean.setMessage(message);
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -392,11 +394,13 @@ public class Home extends HttpServlet {
 				dispatcher.forward(request, response);
 			}else {
 				message = "Please enter correct UserId";
+				userBean.setMessage(message);
 				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Home.jsp");
 				dispatcher.forward(request, response);
 			}
 				}catch (NullPointerException e) {
 					message = "Database is currently down. We are working on it to bring it up soon.Thank you for your patience.!";
+					userBean.setMessage(message);
 				}
 			//System.out.println("userid value entered:"+request.getParameter("search"));
 					catch (SQLException e1) {
@@ -404,9 +408,9 @@ public class Home extends HttpServlet {
 					e1.printStackTrace();
 				}
 		}
-		if(request.getParameter("createUser")=="createUser") {
-			System.out.println("creating new user");
-		}
+//		if(request.getParameter("createUser")=="createUser") {
+//			System.out.println("creating new user");
+//		}
 			}
 	
 }
