@@ -100,6 +100,92 @@ public class DbManager {
 
 	}
 	
+	public static void EditUserInDB(UserBean userBean)
+			throws ClassNotFoundException, SQLException {
+		System.out.println("inside EditUserInDB");
+		Connection conn = ConnectionManager.getInstance().getConnection();
+		ResourceBundle rbi = ResourceBundle.getBundle("sql");
+		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(rbi
+					.getString("editUserInfoToDb"));
+
+			pstmt.setString(1, userBean.getDate());
+			pstmt.setString(2, userBean.getTime());
+			pstmt.setString(3, userBean.getSeqNo());
+			pstmt.setString(4, userBean.getLastName());
+			pstmt.setString(5, userBean.getFirstName());
+			pstmt.setString(6, userBean.getCallbackNo());
+			pstmt.setString(7, userBean.getCurrentLoc());
+			pstmt.setInt(8, userBean.getAge());
+			pstmt.setString(9, userBean.getGender());
+			pstmt.setString(10, userBean.getTeamRole());
+			pstmt.setString(11, userBean.getUnit());
+			pstmt.setString(12, userBean.getRace());
+			pstmt.setString(13, userBean.getEthnicity());
+			pstmt.setString(14, userBean.getNewVsEx());
+			pstmt.setString(15, userBean.getTopConcern());
+			pstmt.setString(16, userBean.getOtherConcern());
+			pstmt.setString(17, userBean.getCovidStatus());
+			pstmt.setString(18, userBean.getPastDiagnoses());
+			pstmt.setString(19, userBean.getCurrentMeds());
+			pstmt.setString(20, userBean.getSummarizeIntervention());
+			pstmt.setString(21, userBean.getUserId());
+			String[] psychosocial = userBean.getPsychosocialList();
+			String delimiter = ",";
+			String psychosocialStr="", prefix="";
+			String referralStr="", prefixRef="";
+			String joinedString = "";
+		    for (int i=0; i<psychosocial.length; i++)
+		    {
+		       if(psychosocial.length == 1) {
+		       psychosocialStr = psychosocial[i];
+		       }else {
+		       psychosocialStr += prefix + psychosocial[i];
+		       prefix = delimiter;
+		       }
+		    }
+		    
+		    System.out.println("psychosocialStr in dbmanager:"+psychosocialStr);
+		    pstmt.setString(22, psychosocialStr);
+			pstmt.setString(23, userBean.getMedication());
+			String[] referral = userBean.getReferralList();
+		    for (int i=0; i<referral.length; i++)
+		    {
+		       if(referral.length == 1) {
+		    	   referralStr = referral[i];
+		       }else {
+		    	   referralStr += prefixRef + referral[i];
+		    	   prefixRef = delimiter;
+		       }
+		    }
+		    System.out.println("referralStr in dbmanager:"+referralStr);
+			pstmt.setString(24, referralStr);
+			pstmt.setString(25, userBean.getEducation());
+			pstmt.setString(26, userBean.getFollowUpPlans());
+			pstmt.setString(27, userBean.getDurationOfIntervention());
+			pstmt.setString(28, userBean.getNewCall());
+			pstmt.setString(29, userBean.getFollowUp());
+			pstmt.setTimestamp(30, timestamp);
+			
+			pstmt.executeUpdate();
+			pstmt.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				conn = null;
+			}
+		}
+
+	}
+
+	
 	public static List getUserInfo(String userId) throws SQLException {
 		System.out.println("inside dbmanager getuserinfo");
 		ResourceBundle rb = ResourceBundle.getBundle("sql");

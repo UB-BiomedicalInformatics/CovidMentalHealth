@@ -56,6 +56,7 @@ public class Home extends HttpServlet {
 		System.out.println("Save User: "+request.getParameter("saveForm"));
 		System.out.println("get newuser from session :"+session.getAttribute("newUser"));
 		System.out.println("get userid from session :"+session.getAttribute("userid"));
+		String useridFromSession = (String)session.getAttribute("userid");
 		String newUserFromSession = (String)session.getAttribute("newUser");
 		
 		if(newUserFromSession!=null) {
@@ -233,7 +234,11 @@ public class Home extends HttpServlet {
 			userBean.setFollowUp(followUpStr);
 //			request.setAttribute("UsrBean", userBean);
 			try {
+				if(useridFromSession!=null) {
+					DbManager.EditUserInDB(userBean);
+				}else {
 				DbManager.SaveUserInDB(userBean);
+				}
 				message = "Information saved. Thank you!";
 				userBean.setMessage(message);
 				request.setAttribute("UsrBean", userBean);
