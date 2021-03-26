@@ -146,7 +146,9 @@ public class DbManager {
 					System.out.println("inside rs nullllllll--------");
 				}else {
 				while (rs.next()) {
+					System.out.println("inside rs next");
 					date = rs.getString("Date");
+					System.out.println("inside rs next date: "+date);
 					time = rs.getString("Time");
 					seqNo = rs.getString("SeqNumber");
 					lastName = rs.getString("LastName");
