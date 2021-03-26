@@ -146,7 +146,7 @@ public class DbManager {
 					System.out.println("inside rs nullllllll--------");
 				}else {
 					System.out.println("inside else of rs not null");
-				while (rs.next()) {
+				while (rs.next()==true) {
 					System.out.println("inside rs next");
 					date = rs.getString("Date");
 					System.out.println("inside rs next date: "+date);
