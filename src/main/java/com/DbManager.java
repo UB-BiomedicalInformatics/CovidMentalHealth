@@ -145,6 +145,7 @@ public class DbManager {
 				if (rs.next() == false) {
 					System.out.println("inside rs nullllllll--------");
 				}else {
+					System.out.println("inside else of rs not null");
 				while (rs.next()) {
 					System.out.println("inside rs next");
 					date = rs.getString("Date");
@@ -227,7 +228,7 @@ public class DbManager {
 			UserInfoList.add(curMedication);
 			UserInfoList.add(sumIntervention);
 			UserInfoList.add(psychosocial);
-			UserInfoList.add(medEducation);
+			UserInfoList.add(medEducation);			
 			UserInfoList.add(referral);
 			UserInfoList.add(education);
 			UserInfoList.add(followUpPlans);
