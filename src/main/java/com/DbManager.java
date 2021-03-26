@@ -177,10 +177,8 @@ public class DbManager {
 					durOfIntervention = rs.getString("DurOfIntervention");
 					newCall = rs.getString("NewCall");
 					followUp = rs.getString("FollowUp");
-				}
-				if (rs.next() == false) {
-					System.out.println("inside rs nullllllll--------");
-				}
+//				}
+				
 //			System.out.println("date:"+date);
 //			System.out.println("time:"+time);
 //			System.out.println("seqNo:"+seqNo);
@@ -239,9 +237,14 @@ public class DbManager {
 			UserInfoList.add(newCall);
 			UserInfoList.add(followUp);
 			
+			}//end-while
+			if (rs.next() == false) {
+				System.out.println("inside rs nullllllll--------");
+			}
 			rs.close();
 			prepStmt.close();
-			}
+			
+			}//if rs!=null
 //			}
 		} catch (SQLException e) {
 			e.printStackTrace();
