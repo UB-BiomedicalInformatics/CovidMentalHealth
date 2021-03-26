@@ -139,12 +139,14 @@ public class DbManager {
 			PreparedStatement prepStmt = conn.prepareStatement(rb.getString("selectUserInfo"));
 			prepStmt.setString(1, userId);
 			ResultSet rs = prepStmt.executeQuery();
-			
+			if (!rs.next()){
+				
+			}
 			if (rs != null) {
 				System.out.println("inside rs not null");
-//				if (rs.next() == false) {
-//					System.out.println("inside rs nullllllll--------");
-//				}else {
+				if (!rs.next()) {
+					System.out.println("inside rs nullllllll--------");
+				}
 //					System.out.println("inside else of rs not null");
 				while (rs.next()) {
 					System.out.println("inside rs next");
@@ -238,9 +240,9 @@ public class DbManager {
 			UserInfoList.add(followUp);
 			
 			}//end-while
-			if (rs.next() == false) {
-				System.out.println("inside rs nullllllll--------");
-			}
+//			if (rs.next() == false) {
+//				System.out.println("inside rs nullllllll--------");
+//			}
 			rs.close();
 			prepStmt.close();
 			

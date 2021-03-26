@@ -249,19 +249,19 @@ public class Home extends HttpServlet {
 				System.out.println("inside user matched");	
 				for(int i=0;i<userInfoList.size();i++) {
 					String dateStr = (String)userInfoList.get(0);	
-					System.out.println("111 :"+dateStr);
+//					System.out.println("111 :"+dateStr);
 					String timeStr = (String)userInfoList.get(1);	
-					System.out.println("222 :"+timeStr);
+//					System.out.println("222 :"+timeStr);
 					String seqNoStr = (String)userInfoList.get(2);	
-					System.out.println("333 :"+seqNoStr);
+//					System.out.println("333 :"+seqNoStr);
 					String lastNameStr = (String)userInfoList.get(3);
-					System.out.println("444 :"+lastNameStr);
+//					System.out.println("444 :"+lastNameStr);
 					String firstNameStr = (String)userInfoList.get(4);
-					System.out.println("555 :"+firstNameStr);
+//					System.out.println("555 :"+firstNameStr);
 					String callbackNoStr = (String)userInfoList.get(5);	
-					System.out.println("667 :"+callbackNoStr);
+//					System.out.println("667 :"+callbackNoStr);
 					String currentLocStr = (String)userInfoList.get(6);	
-					System.out.println("777 :"+currentLocStr);
+//					System.out.println("777 :"+currentLocStr);
 //				
 //					String ageStr = request.getParameter("age");
 //					if(ageStr!="") {
@@ -271,31 +271,31 @@ public class Home extends HttpServlet {
 //					userBean.setAge(0);
 //					}
 					int age = (int)userInfoList.get(7);	
-					System.out.println("888 :"+age);
+//					System.out.println("888 :"+age);
 					String genderStr = (String)userInfoList.get(8);
-					System.out.println("999 :"+genderStr);
+//					System.out.println("999 :"+genderStr);
 					String teamRoleStr = (String)userInfoList.get(9);
-					System.out.println("aaa :"+teamRoleStr);
+//					System.out.println("aaa :"+teamRoleStr);
 					String unitStr = (String)userInfoList.get(10);
-					System.out.println("bbb :"+unitStr);
+//					System.out.println("bbb :"+unitStr);
 					String raceStr = (String)userInfoList.get(11);
-					System.out.println("ccc :"+raceStr);
+//					System.out.println("ccc :"+raceStr);
 					String ethnicityStr = (String)userInfoList.get(12);
-					System.out.println("ddd :"+ethnicityStr);
+//					System.out.println("ddd :"+ethnicityStr);
 					String newVsExStr = (String)userInfoList.get(13);
-					System.out.println("eee :"+newVsExStr);
+//					System.out.println("eee :"+newVsExStr);
 					String topConcernStr = (String)userInfoList.get(14);
-					System.out.println("fff :"+topConcernStr);
+//					System.out.println("fff :"+topConcernStr);
 					String otherConcernStr = (String)userInfoList.get(15);
-					System.out.println("ggg :"+otherConcernStr);
+//					System.out.println("ggg :"+otherConcernStr);
 					String covidStatusStr = (String)userInfoList.get(16);
-					System.out.println("hhh :"+covidStatusStr);
+//					System.out.println("hhh :"+covidStatusStr);
 					String pastDiagnosesStr = (String)userInfoList.get(17);
-					System.out.println("iii :"+pastDiagnosesStr);
+//					System.out.println("iii :"+pastDiagnosesStr);
 					String currentMedsStr = (String)userInfoList.get(18);
-					System.out.println("jjj :"+currentMedsStr);
+//					System.out.println("jjj :"+currentMedsStr);
 					String summarizeInterventionStr = (String)userInfoList.get(19);
-					System.out.println("kkk :"+summarizeInterventionStr);
+//					System.out.println("kkk :"+summarizeInterventionStr);
 //					String[] psychosocialStr = request.getParameterValues("psychosocial");
 //					String otherPsychosocialStr = "";
 //					String otherReferralStr = "";
@@ -321,7 +321,7 @@ public class Home extends HttpServlet {
 //						userBean.setOtherPsychosocial(otherPsychosocialStr);
 //					}
 					String medicationStr = (String)userInfoList.get(21);
-					System.out.println("lll :"+medicationStr);
+//					System.out.println("lll :"+medicationStr);
 //					String[] referralStr = request.getParameterValues("referral");
 //					if(referralStr!=null) {
 //						List<String> referralList = new ArrayList<String>(referralStr.length);
@@ -356,12 +356,12 @@ public class Home extends HttpServlet {
 ////					System.out.println("userId:"+userId);
 					session.setAttribute("userid", userId);
 //				
-						System.out.println("dateStr: "+dateStr);
-					System.out.println("timeStr: "+timeStr);
-					System.out.println("lastNameStr: "+lastNameStr);
-					System.out.println("firstNameStr: "+firstNameStr);
-					System.out.println("currentLocStr: "+currentLocStr);
-					System.out.println("age: "+age);
+//						System.out.println("dateStr: "+dateStr);
+//					System.out.println("timeStr: "+timeStr);
+//					System.out.println("lastNameStr: "+lastNameStr);
+//					System.out.println("firstNameStr: "+firstNameStr);
+//					System.out.println("currentLocStr: "+currentLocStr);
+//					System.out.println("age: "+age);
 //					System.out.println("genderStr: "+genderStr);
 //					System.out.println("teamRoleStr: "+teamRoleStr);
 //					System.out.println("unitStr: "+unitStr);
