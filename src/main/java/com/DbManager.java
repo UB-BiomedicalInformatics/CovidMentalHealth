@@ -130,7 +130,7 @@ public class DbManager {
 			pstmt.setString(18, userBean.getPastDiagnoses());
 			pstmt.setString(19, userBean.getCurrentMeds());
 			pstmt.setString(20, userBean.getSummarizeIntervention());
-			pstmt.setString(21, userBean.getUserId());
+
 			String[] psychosocial = userBean.getPsychosocialList();
 			String delimiter = ",";
 			String psychosocialStr="", prefix="";
@@ -147,8 +147,8 @@ public class DbManager {
 		    }
 		    
 		    System.out.println("psychosocialStr in dbmanager:"+psychosocialStr);
-		    pstmt.setString(22, psychosocialStr);
-			pstmt.setString(23, userBean.getMedication());
+		    pstmt.setString(21, psychosocialStr);
+			pstmt.setString(22, userBean.getMedication());
 			String[] referral = userBean.getReferralList();
 		    for (int i=0; i<referral.length; i++)
 		    {
@@ -160,13 +160,14 @@ public class DbManager {
 		       }
 		    }
 		    System.out.println("referralStr in dbmanager:"+referralStr);
-			pstmt.setString(24, referralStr);
-			pstmt.setString(25, userBean.getEducation());
-			pstmt.setString(26, userBean.getFollowUpPlans());
-			pstmt.setString(27, userBean.getDurationOfIntervention());
-			pstmt.setString(28, userBean.getNewCall());
-			pstmt.setString(29, userBean.getFollowUp());
-			pstmt.setTimestamp(30, timestamp);
+			pstmt.setString(23, referralStr);
+			pstmt.setString(24, userBean.getEducation());
+			pstmt.setString(25, userBean.getFollowUpPlans());
+			pstmt.setString(26, userBean.getDurationOfIntervention());
+			pstmt.setString(27, userBean.getNewCall());
+			pstmt.setString(28, userBean.getFollowUp());
+			pstmt.setTimestamp(29, timestamp);
+			pstmt.setString(30, userBean.getUserId());
 			
 			pstmt.executeUpdate();
 			pstmt.close();
