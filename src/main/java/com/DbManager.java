@@ -142,11 +142,11 @@ public class DbManager {
 			
 			if (rs != null) {
 				System.out.println("inside rs not null");
-				if (rs.next() == false) {
-					System.out.println("inside rs nullllllll--------");
-				}else {
-					System.out.println("inside else of rs not null");
-				while (rs.next()==true) {
+//				if (rs.next() == false) {
+//					System.out.println("inside rs nullllllll--------");
+//				}else {
+//					System.out.println("inside else of rs not null");
+				while (rs.next()) {
 					System.out.println("inside rs next");
 					date = rs.getString("Date");
 					System.out.println("inside rs next date: "+date);
@@ -177,6 +177,9 @@ public class DbManager {
 					durOfIntervention = rs.getString("DurOfIntervention");
 					newCall = rs.getString("NewCall");
 					followUp = rs.getString("FollowUp");
+				}
+				if (rs.next() == false) {
+					System.out.println("inside rs nullllllll--------");
 				}
 //			System.out.println("date:"+date);
 //			System.out.println("time:"+time);
@@ -239,7 +242,7 @@ public class DbManager {
 			rs.close();
 			prepStmt.close();
 			}
-			}
+//			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
