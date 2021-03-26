@@ -89,7 +89,7 @@ public class Home extends HttpServlet {
 			System.out.println("before create new user request dispatch");
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CaseReport.jsp");
 			dispatcher.forward(request, response);
-		}else if(saveUserInfo!=null && (session.getAttribute("newUser")=="newUser"||session.getAttribute("newUser")==null) && saveUserInfo.equalsIgnoreCase("saveForm")) {
+		}else if(saveUserInfo!=null && session.getAttribute("newUser")!=null && saveUserInfo.equalsIgnoreCase("saveForm")) {
 			System.out.println("inside save form");
 			session.setAttribute("saveUser", "saveUser");
 			String dateStr = request.getParameter("date");
