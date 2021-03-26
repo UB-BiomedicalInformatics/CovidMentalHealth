@@ -60,6 +60,7 @@ public class Home extends HttpServlet {
 			System.out.println("nulllllllllllllllllllll");
 		}else {
 			System.out.println("nottttttttttttttttttttttt nulllllllllllllllllllll");
+			System.out.println("(String)session.getAttribute(\"newUser\"): "+(String)session.getAttribute("newUser"));
 		}
 		if(((String)session.getAttribute("newUser"))=="") {
 			System.out.println("emptyyyyyyyyyyyyyyyy");
