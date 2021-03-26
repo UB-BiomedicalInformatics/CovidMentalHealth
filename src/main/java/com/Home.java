@@ -58,16 +58,16 @@ public class Home extends HttpServlet {
 		System.out.println("get userid from session :"+session.getAttribute("userid"));
 		String newUserFromSession = (String)session.getAttribute("newUser");
 		
-		if(newUserFromSession==null) {
+		if(newUserFromSession!=null) {
+			System.out.println("nottttttttttt nulllllllllllllllllllll");
+		}else {
 			System.out.println("nulllllllllllllllllllll");
-		}else {
-			System.out.println("nottttttttttttttttttttttt nulllllllllllllllllllll");
 		}
-		if(newUserFromSession.equalsIgnoreCase("")) {
-			System.out.println("emptyyyyyyyyyyyyyyyy");
-		}else {
-			System.out.println("nottttttttttttt emptyyyyyyyyyyyyyyyyy");
-		}
+//		if(newUserFromSession.equalsIgnoreCase("")) {
+//			System.out.println("emptyyyyyyyyyyyyyyyy");
+//		}else {
+//			System.out.println("nottttttttttttt emptyyyyyyyyyyyyyyyyy");
+//		}
 		String userId = request.getParameter("search");
 		System.out.println("111111111111111111");
 		String newUser = request.getParameter("createUser");
