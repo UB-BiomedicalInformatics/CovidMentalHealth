@@ -139,9 +139,7 @@ public class DbManager {
 			PreparedStatement prepStmt = conn.prepareStatement(rb.getString("selectUserInfo"));
 			prepStmt.setString(1, userId);
 			ResultSet rs = prepStmt.executeQuery();
-			if (!rs.next()){
-				
-			}
+
 			if (rs != null) {
 				System.out.println("inside rs not null");
 				if (!rs.next()) {
