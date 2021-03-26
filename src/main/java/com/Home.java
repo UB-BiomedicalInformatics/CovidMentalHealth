@@ -63,7 +63,7 @@ public class Home extends HttpServlet {
 		}else {
 			System.out.println("nottttttttttttttttttttttt nulllllllllllllllllllll");
 		}
-		if(newUserFromSession.isEmpty()) {
+		if(newUserFromSession.equalsIgnoreCase("")) {
 			System.out.println("emptyyyyyyyyyyyyyyyy");
 		}else {
 			System.out.println("nottttttttttttt emptyyyyyyyyyyyyyyyyy");
