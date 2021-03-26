@@ -56,6 +56,16 @@ public class Home extends HttpServlet {
 		System.out.println("Save User: "+request.getParameter("saveForm"));
 		System.out.println("get newuser from session :"+session.getAttribute("newUser"));
 		System.out.println("get userid from session :"+session.getAttribute("userid"));
+		if(session.getAttribute("newUser")==null) {
+			System.out.println("nulllllllllllllllllllll");
+		}else {
+			System.out.println("nottttttttttttttttttttttt nulllllllllllllllllllll");
+		}
+		if(session.getAttribute("newUser")=="") {
+			System.out.println("emptyyyyyyyyyyyyyyyy");
+		}else {
+			System.out.println("nottttttttttttt emptyyyyyyyyyyyyyyyyy");
+		}
 		String userId = request.getParameter("search");
 		System.out.println("111111111111111111");
 		String newUser = request.getParameter("createUser");
