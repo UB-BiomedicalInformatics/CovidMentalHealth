@@ -31,7 +31,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
 <title>CovidMentalHealth</title>
 <% 
-out.println("inside home page in jsp");
+	out.println("inside home page in jsp");
 	String errorMessage = ""; 
    String message = "";
    UserBean userBean = (UserBean)request.getAttribute("UsrBean");
@@ -44,9 +44,7 @@ out.println("inside home page in jsp");
 %>
 <script type="text/javascript">
 function checkIfUserExists(){
-	alert("inside check if user exists");
 	var userIdEntered = document.getElementById('searchId').value;
-	alert("userid:"+userIdEntered);	
 	document.getElementById("hiddenField").value=userIdEntered;
 
 	//if(userIdEntered!=null && userIdEntered!=""){
@@ -112,7 +110,7 @@ input {
 	</div>
 	<div class="content-wrapper">
 		<div class="content">	
-			<% out.println("message: "+message);
+			<% 
 			if(message!=null&&message!=""){%>
 			<div id="errormessage"><font color=red size=3px><%=message%></font></div>
 			<%}%>
