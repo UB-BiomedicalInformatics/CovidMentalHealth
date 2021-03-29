@@ -62,10 +62,6 @@ public class Home extends HttpServlet {
 		String editUserFromSession = (String) session.getAttribute("editUser");
 		String userId = request.getParameter("search");
 		String newUser = request.getParameter("createUser");
-		System.out.println("newUser from request:"+newUser);
-		System.out.println("newUser from session:"+newUserFromSession);
-		System.out.println("saveUser from session:"+saveUserFromSession);
-		System.out.println("editUser from session:"+editUserFromSession);
 		String saveUserInfo = request.getParameter("saveForm");
 		if (newUser != null && newUser.equalsIgnoreCase("createUser")) {
 			System.out.println("inside create new user");
@@ -188,7 +184,8 @@ public class Home extends HttpServlet {
 			userBean.setNewCall(newCallStr);
 			userBean.setFollowUp(followUpStr);
 			try {
-				if (saveUserFromSession != null && saveUserFromSession.equalsIgnoreCase("saveUser") && editUserFromSession.equalsIgnoreCase("")) {
+				if (saveUserFromSession != null && saveUserFromSession.equalsIgnoreCase("saveUser")
+						&& editUserFromSession.equalsIgnoreCase("")) {
 					DbManager.EditUserInDB(userBean);
 					session.setAttribute("editUser", "editUser");
 				} else {
