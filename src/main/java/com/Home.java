@@ -75,7 +75,8 @@ public class Home extends HttpServlet {
 		System.out.println("222222222222222");
 		String saveUserInfo = request.getParameter("saveForm");
 		System.out.println("333333333333333");
-		if(newUser!=null && (session.getAttribute("newUser")==null) && (newUser.equalsIgnoreCase("createUser"))) {
+//		if(newUser!=null && (session.getAttribute("newUser")==null) && (newUser.equalsIgnoreCase("createUser"))) {
+		if(newUser!=null && newUser.equalsIgnoreCase("createUser")) {
 			System.out.println("inside create new user");
 			session.removeAttribute("userid");
 			System.out.println("before session");
