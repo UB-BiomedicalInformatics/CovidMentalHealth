@@ -58,10 +58,12 @@ public class Home extends HttpServlet {
 		HttpSession session = request.getSession();
 		String useridFromSession = (String) session.getAttribute("userid");
 		String newUserFromSession = (String) session.getAttribute("newUser");
+		String saveUserFromSession = (String) session.getAttribute("saveUser");
 		String userId = request.getParameter("search");
 		String newUser = request.getParameter("createUser");
 		System.out.println("newUser from request:"+newUser);
 		System.out.println("newUser from session:"+newUserFromSession);
+		System.out.println("saveUser from session:"+saveUserFromSession);
 		String saveUserInfo = request.getParameter("saveForm");
 		if (newUser != null && newUser.equalsIgnoreCase("createUser")) {
 			System.out.println("inside create new user");
@@ -76,7 +78,7 @@ public class Home extends HttpServlet {
 		} else if (saveUserInfo != null && session.getAttribute("newUser") != null
 				&& saveUserInfo.equalsIgnoreCase("saveForm")) {
 			System.out.println("inside save form");
-			session.setAttribute("saveUser", "saveUser");
+//			session.setAttribute("saveUser", "saveUser");
 			String dateStr = request.getParameter("date");
 			String timeStr = request.getParameter("time");
 			String seqNoStr = request.getParameter("seqNo");
@@ -188,6 +190,7 @@ public class Home extends HttpServlet {
 					DbManager.EditUserInDB(userBean);
 				} else {
 					DbManager.SaveUserInDB(userBean);
+					session.setAttribute("saveUser", "saveUser");
 				}
 				message = "Information saved. Thank you!";
 				userBean.setMessage(message);
