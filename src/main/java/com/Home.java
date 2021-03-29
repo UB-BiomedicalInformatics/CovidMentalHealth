@@ -59,11 +59,13 @@ public class Home extends HttpServlet {
 		String useridFromSession = (String) session.getAttribute("userid");
 		String newUserFromSession = (String) session.getAttribute("newUser");
 		String saveUserFromSession = (String) session.getAttribute("saveUser");
+		String editUserFromSession = (String) session.getAttribute("editUser");
 		String userId = request.getParameter("search");
 		String newUser = request.getParameter("createUser");
 		System.out.println("newUser from request:"+newUser);
 		System.out.println("newUser from session:"+newUserFromSession);
 		System.out.println("saveUser from session:"+saveUserFromSession);
+		System.out.println("editUser from session:"+editUserFromSession);
 		String saveUserInfo = request.getParameter("saveForm");
 		if (newUser != null && newUser.equalsIgnoreCase("createUser")) {
 			System.out.println("inside create new user");
@@ -188,6 +190,7 @@ public class Home extends HttpServlet {
 			try {
 				if (newUser != null) {
 					DbManager.EditUserInDB(userBean);
+					session.setAttribute("editUser", "editUser");
 				} else {
 					DbManager.SaveUserInDB(userBean);
 					session.setAttribute("saveUser", "saveUser");
@@ -212,7 +215,7 @@ public class Home extends HttpServlet {
 			dispatcher.forward(request, response);
 		} else if (userId != null) {
 			System.out.println("inside search for a user");
-			session.setAttribute("editUser", "editUser");
+
 			try {
 				userInfoList = DbManager.getUserInfo(userId);
 				if (userInfoList != null && !userInfoList.isEmpty()) {// user matched
