@@ -188,7 +188,7 @@ public class Home extends HttpServlet {
 			userBean.setNewCall(newCallStr);
 			userBean.setFollowUp(followUpStr);
 			try {
-				if (newUser != null) {
+				if (saveUserFromSession != null && saveUserFromSession.equalsIgnoreCase("saveUser") && editUserFromSession.equalsIgnoreCase("")) {
 					DbManager.EditUserInDB(userBean);
 					session.setAttribute("editUser", "editUser");
 				} else {
