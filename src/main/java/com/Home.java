@@ -60,6 +60,8 @@ public class Home extends HttpServlet {
 		String newUserFromSession = (String) session.getAttribute("newUser");
 		String userId = request.getParameter("search");
 		String newUser = request.getParameter("createUser");
+		System.out.println("newUser from request:"+newUser);
+		System.out.println("newUser from session:"+newUserFromSession);
 		String saveUserInfo = request.getParameter("saveForm");
 		if (newUser != null && newUser.equalsIgnoreCase("createUser")) {
 			System.out.println("inside create new user");
