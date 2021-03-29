@@ -236,10 +236,13 @@ public class Home extends HttpServlet {
 			userBean.setFollowUp(followUpStr);
 //			request.setAttribute("UsrBean", userBean);
 			try {
-				if(useridFromSession!=null) {
-					DbManager.EditUserInDB(userBean);
+//				if(useridFromSession!=null) {
+				if(newUser!=null && newUser.equalsIgnoreCase("createUser")) {
+					DbManager.SaveUserInDB(userBean);
+//					DbManager.EditUserInDB(userBean);
 				}else {
-				DbManager.SaveUserInDB(userBean);
+					DbManager.EditUserInDB(userBean);
+//				DbManager.SaveUserInDB(userBean);
 				}
 				message = "Information saved. Thank you!";
 				userBean.setMessage(message);
