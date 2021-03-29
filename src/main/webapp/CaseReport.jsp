@@ -726,7 +726,6 @@ input {
 			</div>
 		</div>
 	</div>
-			<%session.removeAttribute("userid"); %>
 	</form>
 	</div>
 </body>
