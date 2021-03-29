@@ -33,12 +33,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
 <title>CovidMentalHealth</title>
 <%
-out.println("inside case report jsp");
 UserBean userBean = (UserBean)request.getAttribute("UsrBean");
-//String userId = request.getRemoteUser();
-
 String userId = (String)session.getAttribute("userid");
-out.println("UserID in casereport jsp:"+userId);
 String errorMessage = "";
 session.setAttribute("userid",userId);
 List userInfoList  = new ArrayList();
@@ -221,7 +217,6 @@ $(document).ready(function() {
 		var multiLen = multi.options.length;
 		for(var i=0;i<referralStrLen;i++){
 			for(var j=0;j<multiLen;j++){
-				//alert("i:"+i+"pscho:"+psychosocialLst[i]+"j:"+j+"option:"+multi.options[j].value);
 				if(multi.options[j].value===referralLst[i].trim()){
 					multi.options[j].selected = true;
 				}
