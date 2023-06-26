@@ -38,13 +38,18 @@ String userId = (String)session.getAttribute("userid");
 String errorMessage = "";
 session.setAttribute("userid",userId);
 List userInfoList  = new ArrayList();
+try {
+System.out.println("HHHHHHHHHHHHHHHHHHHHHHH");
 if(userId!=null){
-	try {
+System.out.println("HdddHHHHHHHHHHHHHHHHHHHHHH");
 userInfoList  = DbManager.getUserInfo(userId);
-	}catch (NullPointerException e) {
-		errorMessage = "Database is currently down. We are working on it to bring it up soon.Thank you for your patience.!";
-	}
+System.out.println(userInfoList != null);
 }
+
+} catch (NullPointerException e) {
+   errorMessage = "Database is currently down. We are working on it to bring it up soon.Thank you for your patience.!";
+}
+
 String date="";
 String time="";
 String seqNo="";
